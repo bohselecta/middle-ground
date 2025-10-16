@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
@@ -42,22 +41,6 @@ export default function Sidebar() {
 
   return (
     <div className="flex w-64 flex-col bg-white/70 backdrop-blur border-r border-white/60">
-      {/* Logo */}
-      <div className="flex h-16 items-center px-6">
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo-mark.svg"
-            alt="Tablature"
-            width={28}
-            height={28}
-            className="h-7 w-7"
-          />
-          <span className="text-lg font-semibold tracking-tight text-slate-900">
-            Tablature
-          </span>
-        </Link>
-      </div>
-
       {/* Navigation */}
       <nav className="flex-1 px-4 py-6 space-y-2">
         {navigation.map((item) => {
