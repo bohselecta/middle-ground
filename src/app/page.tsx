@@ -52,47 +52,12 @@ export default function TablatureHome() {
             </div>
           </div>
 
-          {/* Right visual: Alignment preview card */}
+          {/* Right visual: Live Alignment Preview */}
           <div className="relative">
             <div className="absolute -inset-8 -z-10 rounded-[2rem] bg-staff" />
-            <div className="rounded-[2rem] bg-white/70 p-6 shadow-soft backdrop-blur">
-              <h3 className="text-lg font-medium text-slate-900">Alignment Canvas — preview</h3>
-              <p className="mt-1 text-sm text-slate-600">Where intent meets method.</p>
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-amber/40 p-4">
-                  <div className="text-xs uppercase tracking-wide text-slate-700">Intent</div>
-                  <div className="mt-1 text-slate-900">Improve deep work time</div>
-                </div>
-                <div className="rounded-2xl bg-mint/50 p-4">
-                  <div className="text-xs uppercase tracking-wide text-slate-700">Method</div>
-                  <div className="mt-1 text-slate-900">Move meetings to afternoons</div>
-                </div>
-              </div>
-
-              <div className="mt-5">
-                <StringLine agreement={0.78} label="Agreement" />
-              </div>
-
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                <button className="rounded-2xl bg-white/70 px-4 py-2 text-left shadow-soft hover:shadow-md">✅ Approve Trial</button>
-                <button className="rounded-2xl bg-white/70 px-4 py-2 text-left shadow-soft hover:shadow-md">🕓 Postpone</button>
-                <button className="rounded-2xl bg-white/70 px-4 py-2 text-left shadow-soft hover:shadow-md">🌀 Reroute</button>
-              </div>
-            </div>
-
-            {/* Floating insight cards */}
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <ChordCard title="Focus drop on Mondays" reason="Meetings ↑ 35%" cta="Propose Focus Morning" />
-              <ChordCard title="Clarity flagged" reason="3 people noted unclear specs" cta="Clarify sprint goals" />
-            </div>
+            <AlignmentPreview />
           </div>
         </div>
-      </section>
-
-      {/* Alignment Preview: live, privacy‑safe */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <AlignmentPreview />
       </section>
 
       {/* How it works */}
