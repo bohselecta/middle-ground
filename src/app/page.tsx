@@ -43,7 +43,7 @@ export default function TablatureHome() {
               </Link>
               <Link
                 href="/team-pulse"
-                className="rounded-2xl bg-white/70 px-5 py-3 text-slate-900 shadow-soft hover:shadow-md"
+                className="rounded-2xl border-2 border-slate-300 bg-transparent px-5 py-3 text-slate-900 hover:bg-white/70"
               >
                 See Team Pulse
               </Link>
@@ -114,7 +114,7 @@ export default function TablatureHome() {
           </div>
           <div className="flex gap-3">
             <Link href="/my-flow" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
-            <Link href="/team-pulse" className="rounded-2xl bg-white px-4 py-2 text-slate-900 shadow-soft hover:shadow-md">See Pulse</Link>
+            <Link href="/team-pulse" className="rounded-2xl border-2 border-slate-300 bg-transparent px-4 py-2 text-slate-900 hover:bg-white/70">See Pulse</Link>
           </div>
         </div>
       </section>
@@ -122,6 +122,9 @@ export default function TablatureHome() {
       {/* Footer */}
       <footer className="border-t border-white/60 bg-white/60">
         <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-600">
+          <div className="mb-4 text-center">
+            <p className="text-slate-600">All individual reflections remain private unless explicitly shared.</p>
+          </div>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="font-medium text-slate-800">Tablature</div>
                 <div className="opacity-80">Privacy‑first · No leaderboards · Built for clarity</div>

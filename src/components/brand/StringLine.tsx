@@ -7,7 +7,7 @@ export default function StringLine({
 }: { agreement: number; label?: string }) {
   const pct = Math.max(0, Math.min(100, Math.round(agreement * 100)))
   return (
-    <div className="w-full">
+    <div className="w-full" title="Alignment strength: how closely intent and execution match">
       <div className="h-2 w-full rounded-full bg-slate-200">
         <motion.div
           className="h-2 rounded-full bg-mint"

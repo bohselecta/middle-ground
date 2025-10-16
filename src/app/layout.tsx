@@ -15,20 +15,27 @@ export const metadata: Metadata = {
     url: "https://www.tablature.io/",
     title: "Tablature — Coordinate the work. Stay aligned.",
     description:
-      "Align intent and method without surveillance. Workers find rhythm; managers hear the whole chord.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Tablature" }],
+      "Tablature helps teams align intent and execution without surveillance. Workers express needs clearly. Managers understand patterns safely.",
+    images: [{ url: "/tablature-brand-assets/og.png", width: 1200, height: 630, alt: "Tablature" }],
     siteName: "Tablature",
   },
   twitter: {
     card: "summary_large_image",
     title: "Tablature — Coordinate the work. Stay aligned.",
     description:
-      "A human alignment dashboard that turns coordination into harmony.",
-    images: ["/og.png"],
+      "A human alignment dashboard for teams — clarity at work, made simple, safe, and shared.",
+    images: ["/tablature-brand-assets/og.png"],
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }],
-    shortcut: ["/favicon.ico"],
+    icon: [
+      { url: "/tablature-brand-assets/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/tablature-brand-assets/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/tablature-brand-assets/favicon.ico", sizes: "any" }
+    ],
+    shortcut: ["/tablature-brand-assets/favicon.ico"],
+    apple: [
+      { url: "/tablature-brand-assets/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ],
   },
   robots: { index: true, follow: true },
 };
