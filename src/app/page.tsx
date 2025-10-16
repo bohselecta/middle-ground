@@ -14,11 +14,7 @@ export default function TablatureHome() {
 
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs text-slate-600 shadow-soft">
-              <span className="h-2 w-2 rounded-full bg-mint" />
-              Human alignment dashboard
-            </div>
-                <h1 className="mt-4 text-5xl font-semibold leading-tight tracking-tight text-slate-900">
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900">
                   Coordinate the work. <span className="text-slate-700">Stay aligned.</span>
                 </h1>
                 <p className="mt-4 max-w-xl text-lg text-slate-600">
