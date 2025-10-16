@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String       @id @default(cuid())
+  name        String
+  role        String       // 'worker' | 'manager'
+  teamId      String?
+  reflections Reflection[]
+  frictions   Friction[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Reflection {
+  id        String   @id @default(cuid())
+  userId    String
+  date      DateTime @default(now())
+  mood      String   // 'low' | 'neutral' | 'high'
+  note      String?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Friction {
+  id        String   @id @default(cuid())
+  userId    String
+  date      DateTime @default(now())
+  tag       String   // 'meetings' | 'unclear' | 'context' | 'tools' | 'fatigue'
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Experiment {
+  id        String   @id @default(cuid())
+  title     String
+  status    String   @default("proposed") // 'proposed' | 'running' | 'done'
+  start     DateTime?
+  end       DateTime?
+  rationale String?
+  outcome   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OverrideLog {
+  id        String   @id @default(cuid())
+  managerId String
+  reason    String
+  date      DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

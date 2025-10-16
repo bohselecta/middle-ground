@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
+}
+
+/* Tablature: subtle grid lines to suggest structure without noise */
+.bg-fret {
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.06) 0 1px,
+      transparent 1px 24px
+    );
+}
+.bg-staff {
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.08) 0 2px,
+      transparent 2px 20px
+    );
+}
+/* Light shimmer for consensus events */
+@keyframes tablature-shimmer {
+  0% { opacity: 0; }
+  20% { opacity: .6; }
+  100% { opacity: 0; }
+}
+.shimmer-once { animation: tablature-shimmer 900ms ease-out 1; }
