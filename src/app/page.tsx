@@ -1,8 +1,11 @@
+'use client'
 import Link from "next/link";
 import NoteChip from "@/components/brand/NoteChip";
 import StringLine from "@/components/brand/StringLine";
 import ChordCard from "@/components/brand/ChordCard";
 import AlignmentPreview from "@/components/landing/AlignmentPreview";
+import IntegrationCard from "@/components/integrations/IntegrationCard";
+import SlackIcon from "@/components/icons/SlackIcon";
 
 export default function TablatureHome() {
   return (
@@ -83,6 +86,28 @@ export default function TablatureHome() {
             <Link href="/my-flow" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
             <Link href="/team-pulse" className="rounded-2xl border-2 border-slate-300 bg-transparent px-4 py-2 text-slate-900 hover:bg-white/70">See Pulse</Link>
           </div>
+        </div>
+      </section>
+
+      {/* Connect tools you use */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 className="text-2xl font-semibold text-slate-900">Connect tools you use</h2>
+        <p className="mt-1 text-slate-600">Optional, privacy‑first. Tablature runs without integrations; Slack brings friction logs and alerts to your workspace.</p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <IntegrationCard
+            title="Slack"
+            desc="Post friction logs and experiment updates into a channel you choose."
+            cta="Connect Slack"
+            icon={<SlackIcon className="h-5 w-5" />}
+            onClick={() => { window.location.href = '/integrations/slack' }}
+          />
+          <IntegrationCard
+            title="Jira"
+            desc="Sync experiments to issues automatically."
+            cta="Coming soon"
+            disabled
+          />
         </div>
       </section>
 

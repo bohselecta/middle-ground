@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import NoteChip from '@/components/brand/NoteChip'
 import { useAppStore } from '@/lib/store'
+import SlackStatusBadge from '@/components/integrations/SlackStatusBadge'
 
 export default function SettingsPage() {
   const { privacySettings, updatePrivacySettings } = useAppStore()
@@ -249,6 +250,28 @@ export default function SettingsPage() {
                 <button className="rounded-xl bg-coral px-4 py-2 text-white font-medium shadow-soft hover:shadow-md transition">
                   Delete
                 </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Integrations */}
+          <div className="rounded-2xl bg-white/70 p-6 shadow-soft">
+            <h2 className="text-xl font-medium text-slate-900 mb-4">Integrations</h2>
+            <div className="space-y-4">
+              <div className="rounded-xl bg-white/50 p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm text-slate-600">Slack</div>
+                    <div className="text-xs text-slate-600">Post friction tags and experiment summaries. No personal reflections are posted.</div>
+                  </div>
+                  <SlackStatusBadge connected={false /* fetch from /api/integrations/slack/status */} />
+                </div>
+                <div className="mt-3 flex gap-2">
+                  <form action="/api/integrations/slack/connect" method="post">
+                    <button className="rounded-xl bg-ink px-3 py-2 text-white">Connect</button>
+                  </form>
+                  <button className="rounded-xl bg-white px-3 py-2 text-slate-900 shadow-soft">Disable posting</button>
+                </div>
               </div>
             </div>
           </div>

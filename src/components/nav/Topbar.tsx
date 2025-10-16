@@ -1,7 +1,8 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useUser } from '@/lib/store'
 import NoteChip from '@/components/brand/NoteChip'
+import SlackStatusBadge from '@/components/integrations/SlackStatusBadge'
 
 const dailyQuotes = [
   'Small improvements create clear progress.',
@@ -21,10 +22,19 @@ export default function Topbar() {
   const user = useUser()
   const [currentStatus, setCurrentStatus] = useState(statusOptions[0])
   const [showProfile, setShowProfile] = useState(false)
+  const [slackConnected, setSlackConnected] = useState(false)
   
   // Rotate quote daily
   const today = new Date().getDate()
   const currentQuote = dailyQuotes[today % dailyQuotes.length]
+
+  // Fetch Slack status on mount
+  useEffect(() => {
+    fetch('/api/integrations/slack/status')
+      .then(res => res.json())
+      .then(data => setSlackConnected(data.connected))
+      .catch(() => setSlackConnected(false))
+  }, [])
 
   return (
     <div className="flex h-16 items-center justify-between border-b border-white/60 bg-white/70 backdrop-blur px-6">
@@ -46,6 +56,9 @@ export default function Topbar() {
           {/* Subtle pulse animation */}
           <div className="absolute inset-0 rounded-2xl bg-mint/20 animate-pulse" />
         </button>
+
+        {/* Slack status badge */}
+        <SlackStatusBadge connected={slackConnected} />
 
         {/* Profile dropdown */}
         <div className="relative">

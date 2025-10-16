@@ -50,6 +50,16 @@ export default function AlignmentPreview(){
           <div className="mt-1 text-slate-900">{method}</div>
         </motion.div>
       </div>
+
+      {/* Demo bubble (no PII) */}
+      <div className="pointer-events-none absolute right-6 top-6 rounded-xl bg-white/80 px-3 py-2 text-xs shadow-soft">
+        <span className="inline-flex items-center gap-2 text-slate-700">
+          <svg viewBox="0 0 122.8 122.8" className="h-3.5 w-3.5" aria-hidden>
+            <circle cx="8" cy="8" r="8" fill="#36C5F0"/>
+          </svg>
+          Friction "meetings" will post to Slack
+        </span>
+      </div>
     </div>
   )
 }
