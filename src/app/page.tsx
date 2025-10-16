@@ -2,6 +2,7 @@ import Link from "next/link";
 import NoteChip from "@/components/brand/NoteChip";
 import StringLine from "@/components/brand/StringLine";
 import ChordCard from "@/components/brand/ChordCard";
+import AlignmentPreview from "@/components/landing/AlignmentPreview";
 
 export default function TablatureHome() {
   return (
@@ -87,6 +88,11 @@ export default function TablatureHome() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Alignment Preview: live, privacy‑safe */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <AlignmentPreview />
       </section>
 
       {/* How it works */}
