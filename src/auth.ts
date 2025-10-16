@@ -10,10 +10,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
   session: { strategy: "database" }, // or "jwt" for edge-friendly
   providers: [
-    EmailProvider({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-    }),
+    // Only add EmailProvider if EMAIL_SERVER is configured
+    ...(process.env.EMAIL_SERVER ? [
+      EmailProvider({
+        server: process.env.EMAIL_SERVER,
+        from: process.env.EMAIL_FROM,
+      })
+    ] : []),
     // GitHub({ 
     //   clientId: process.env.GITHUB_ID!, 
     //   clientSecret: process.env.GITHUB_SECRET! 

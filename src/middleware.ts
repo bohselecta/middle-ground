@@ -2,6 +2,10 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(req: NextRequest) {
+  // Temporarily disabled for development - uncomment when email is configured
+  return NextResponse.next()
+  
+  /*
   const isAuthed = req.cookies.get("next-auth.session-token") || 
                    req.cookies.get("__Secure-next-auth.session-token")
   const pathname = req.nextUrl.pathname
@@ -20,6 +24,7 @@ export function middleware(req: NextRequest) {
   }
   
   return NextResponse.next()
+  */
 }
 
 export const config = {
