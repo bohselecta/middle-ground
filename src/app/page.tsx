@@ -36,13 +36,13 @@ export default function TablatureHome() {
             {/* CTA Row */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
-                href="/(dashboard)/my-flow"
+                href="/my-flow"
                 className="rounded-2xl bg-ink px-5 py-3 text-white shadow-soft hover:shadow-md"
               >
                 Try the demo
               </Link>
               <Link
-                href="/(dashboard)/team-pulse"
+                href="/team-pulse"
                 className="rounded-2xl bg-white/70 px-5 py-3 text-slate-900 shadow-soft hover:shadow-md"
               >
                 See Team Pulse
