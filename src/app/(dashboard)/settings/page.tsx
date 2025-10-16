@@ -8,10 +8,21 @@ export default function SettingsPage() {
   const { privacySettings, updatePrivacySettings } = useAppStore()
   const [localSettings, setLocalSettings] = useState(privacySettings)
 
-  const handleSettingChange = (key: string, value: boolean) => {
+  const handleSettingChange = async (key: string, value: boolean) => {
     const newSettings = { ...localSettings, [key]: value }
     setLocalSettings(newSettings)
     updatePrivacySettings(newSettings)
+    
+    // Save to database
+    try {
+      await fetch('/api/settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ [key]: value })
+      })
+    } catch (error) {
+      console.error('Failed to save setting:', error)
+    }
   }
 
   return (

@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/site/Header";
+import SessionProvider from "@/components/providers/SessionProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tablature.io"),
@@ -44,8 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-soft min-h-screen text-slate-900">
-        <Header />
-        {children}
+        <SessionProvider>
+          <Header />
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );

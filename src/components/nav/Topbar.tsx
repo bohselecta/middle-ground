@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useUser } from '@/lib/store'
 import NoteChip from '@/components/brand/NoteChip'
 import SlackStatusBadge from '@/components/integrations/SlackStatusBadge'
+import { signOut, useSession } from "next-auth/react"
 
 const dailyQuotes = [
   'Small improvements create clear progress.',
@@ -19,7 +20,8 @@ const statusOptions = [
 ]
 
 export default function Topbar() {
-  const user = useUser()
+  const { data: session } = useSession()
+  const user = session?.user
   const [currentStatus, setCurrentStatus] = useState(statusOptions[0])
   const [showProfile, setShowProfile] = useState(false)
   const [slackConnected, setSlackConnected] = useState(false)
@@ -78,7 +80,7 @@ export default function Topbar() {
                 {user?.name || 'Demo User'}
               </div>
               <div className="text-xs text-slate-600">
-                {user?.role || 'worker'}
+                {(user as any)?.role || 'worker'}
               </div>
             </div>
           </button>
@@ -105,7 +107,10 @@ export default function Topbar() {
                 </div>
                 
                 <div className="border-t border-white/60 pt-3">
-                  <button className="text-sm text-slate-600 hover:text-slate-900">
+                  <button 
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                    className="text-sm text-slate-600 hover:text-slate-900"
+                  >
                     Sign out
                   </button>
                 </div>
