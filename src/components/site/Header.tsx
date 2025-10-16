@@ -19,6 +19,7 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-6 text-sm text-slate-700">
           <Link className="hover:opacity-80" href="/">Home</Link>
+          <Link className="hover:opacity-80" href="/demo">Demo</Link>
           <Link className="hover:opacity-80" href="/about">About</Link>
           <Link className="hover:opacity-80" href="/privacy">Privacy</Link>
         </nav>

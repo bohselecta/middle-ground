@@ -36,18 +36,18 @@ export default function TablatureHome() {
             {/* CTA Row */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
-                href="/my-flow"
-                className="rounded-2xl bg-ink px-5 py-3 text-white shadow-soft hover:shadow-md"
+                href="/demo"
+                className="rounded-2xl bg-ink px-6 py-3 text-white shadow-soft hover:shadow-md"
               >
                 Try the demo
               </Link>
               <Link
-                href="/team-pulse"
-                className="rounded-2xl border-2 border-slate-300 bg-transparent px-5 py-3 text-slate-900 hover:bg-white/70"
+                href="/login?callbackUrl=/onboarding"
+                className="rounded-2xl border-2 border-slate-300 bg-transparent px-6 py-3 text-slate-900 hover:bg-white/70"
               >
-                See Team Pulse
+                Start your team
               </Link>
-              <div className="text-sm text-slate-600">No tracking. Local demo ready.</div>
+              <div className="text-sm text-slate-600">No credit card required. 2-minute setup.</div>
             </div>
           </div>
 
