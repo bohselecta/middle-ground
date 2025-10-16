@@ -113,8 +113,8 @@ export default function TablatureHome() {
             <div className="text-sm text-slate-600">MVP runs without external services. Add Neon + Slack when you&apos;re ready.</div>
           </div>
           <div className="flex gap-3">
-            <Link href="/(dashboard)/my-flow" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
-            <Link href="/(dashboard)/team-pulse" className="rounded-2xl bg-white px-4 py-2 text-slate-900 shadow-soft hover:shadow-md">See Pulse</Link>
+            <Link href="/my-flow" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
+            <Link href="/team-pulse" className="rounded-2xl bg-white px-4 py-2 text-slate-900 shadow-soft hover:shadow-md">See Pulse</Link>
           </div>
         </div>
       </section>

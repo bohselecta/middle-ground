@@ -7,31 +7,31 @@ import clsx from 'clsx'
 const navigation = [
   {
     name: 'My Flow Map',
-    href: '/(dashboard)/my-flow',
+    href: '/my-flow',
     icon: '🪷',
     description: 'Personal rhythm & insights',
   },
   {
     name: 'Alignment Canvas',
-    href: '/(dashboard)/alignment',
+    href: '/alignment',
     icon: '💬',
     description: 'Intent meets method',
   },
   {
     name: 'Team Pulse',
-    href: '/(dashboard)/team-pulse',
+    href: '/team-pulse',
     icon: '🌡️',
     description: 'Team climate overview',
   },
   {
     name: 'Culture Moments',
-    href: '/(dashboard)/culture',
+    href: '/culture',
     icon: '🎉',
     description: 'Celebrations & wins',
   },
   {
     name: 'Settings & Privacy',
-    href: '/(dashboard)/settings',
+    href: '/settings',
     icon: '⚙️',
     description: 'Privacy controls',
   },
