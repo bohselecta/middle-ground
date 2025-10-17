@@ -31,7 +31,7 @@ export default function SettingsPage() {
         <div className="mb-8">
               <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Settings & Privacy</h1>
               <p className="mt-2 text-lg text-slate-600">
-                Control how your data contributes. Manage integrations and customize your Tablature experience.
+                Control sharing and integrations.
               </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="font-medium text-slate-900">Share anonymized trends</div>
-                    <div className="text-sm text-slate-600">Managers see only aggregated patterns, never your personal notes</div>
+                    <div className="text-sm text-slate-600">Leaders see trends, not your notes.</div>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input
@@ -81,7 +81,7 @@ export default function SettingsPage() {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="font-medium text-slate-900">Opt-out of manager view</div>
+                    <div className="font-medium text-slate-900">Keep your analytics private</div>
                     <div className="text-sm text-slate-600">Keep personal analytics private, even from aggregated views</div>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
@@ -98,7 +98,7 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="font-medium text-slate-900">Calm Mode</div>
-                    <div className="text-sm text-slate-600">Disable animations and shimmer effects for a calmer experience</div>
+                    <div className="text-sm text-slate-600">Reduce motion and effects.</div>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input
@@ -126,8 +126,8 @@ export default function SettingsPage() {
                 <label className="flex items-center gap-3 p-3 rounded-xl border-2 border-mint bg-mint/10 cursor-pointer">
                   <input type="radio" name="anonymity" value="aggregate" defaultChecked className="text-mint" />
                   <div>
-                    <div className="font-medium text-slate-900">Aggregate only (Recommended)</div>
-                    <div className="text-sm text-slate-600">Your data contributes to team patterns, but you remain anonymous</div>
+                    <div className="font-medium text-slate-900">Aggregate only (recommended)</div>
+                    <div className="text-sm text-slate-600">Contribute patterns, stay anonymous.</div>
                   </div>
                 </label>
                 
@@ -135,7 +135,7 @@ export default function SettingsPage() {
                   <input type="radio" name="anonymity" value="manager" className="text-mint" />
                   <div>
                     <div className="font-medium text-slate-900">Manager view allowed</div>
-                    <div className="text-sm text-slate-600">Managers can see your individual patterns (with your explicit consent)</div>
+                    <div className="text-sm text-slate-600">Let leaders see your patterns (with consent).</div>
                   </div>
                 </label>
                 
@@ -143,7 +143,7 @@ export default function SettingsPage() {
                   <input type="radio" name="anonymity" value="private" className="text-mint" />
                   <div>
                     <div className="font-medium text-slate-900">Fully private</div>
-                    <div className="text-sm text-slate-600">You see only your own analytics, no team contribution</div>
+                    <div className="text-sm text-slate-600">Only you see your analytics.</div>
                   </div>
                 </label>
               </div>

@@ -1,23 +1,24 @@
 # Development Dockerfile with hot reload
 FROM node:18-alpine
 
+# Install OpenSSL and other required packages
+RUN apk add --no-cache openssl openssl-dev
+
 # Set working directory
 WORKDIR /app
 
 # Install pnpm globally
 RUN npm install -g pnpm
 
-# Copy package files
+# Copy package files and prisma schema
 COPY package.json pnpm-lock.yaml ./
+COPY prisma ./prisma
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
-
-# Generate Prisma client (use local prisma instead of dlx)
-RUN pnpm exec prisma generate
 
 # Expose port
 EXPOSE 3000

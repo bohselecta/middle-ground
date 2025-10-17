@@ -6,11 +6,11 @@ import SlackStatusBadge from '@/components/integrations/SlackStatusBadge'
 import { signOut, useSession } from "next-auth/react"
 
 const dailyQuotes = [
-  'Small improvements create clear progress.',
-  'Listen to the patterns of your team.',
-  'Alignment is a practice, not a destination.',
-  'Every insight matters in the process.',
-  'Focus flows from understanding.',
+  'Small improvements compound.',
+  'Listen to patterns.',
+  'Alignment is ongoing.',
+  'Every signal helps.',
+  'Clarity creates focus.',
 ]
 
 const statusOptions = [

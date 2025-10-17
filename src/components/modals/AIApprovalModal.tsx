@@ -6,7 +6,7 @@ import { WorkerResult } from '@/lib/types'
 interface AIApprovalModalProps {
   isOpen: boolean
   onClose: () => void
-  result: WorkerResult
+  result: WorkerResult | null
   runId?: string
   onApprove?: () => void
   onReject?: () => void
@@ -72,7 +72,7 @@ export default function AIApprovalModal({
                 <div className="space-y-4">
                   <div className="bg-slate-50 rounded-lg p-4">
                     <h3 className="font-medium text-slate-900 mb-2">Summary</h3>
-                    <p className="text-slate-700">{result.summary}</p>
+                    <p className="text-slate-700">{result?.summary || 'No summary available'}</p>
                   </div>
                   {runId && (
                     <div className="text-xs text-slate-500">
@@ -84,7 +84,7 @@ export default function AIApprovalModal({
 
               {activeTab === 'artifacts' && (
                 <div className="space-y-4">
-                  {result.artifacts.length === 0 ? (
+                  {!result?.artifacts || result.artifacts.length === 0 ? (
                     <div className="text-slate-500 text-center py-8">
                       No artifacts generated
                     </div>
@@ -112,7 +112,7 @@ export default function AIApprovalModal({
 
               {activeTab === 'next' && (
                 <div className="space-y-4">
-                  {result.next.length === 0 ? (
+                  {!result?.next || result.next.length === 0 ? (
                     <div className="text-slate-500 text-center py-8">
                       No next steps suggested
                     </div>

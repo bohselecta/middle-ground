@@ -98,10 +98,10 @@ export default function FrictionLogModal() {
                 >
                   <div className="mb-6">
                     <Dialog.Title className="text-lg font-medium text-slate-900">
-                      Log Friction
+                      Report a blocker
                     </Dialog.Title>
                     <Dialog.Description className="text-sm text-slate-600 mt-1">
-                      What's getting in the way of clear work today?
+                      What got in the way today?
                     </Dialog.Description>
                   </div>
 
@@ -139,7 +139,7 @@ export default function FrictionLogModal() {
                         disabled={!selectedTag || isSubmitting}
                         className="flex-1 rounded-xl bg-coral px-4 py-3 text-white font-medium shadow-soft hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition"
                       >
-                        {isSubmitting ? 'Logging...' : 'Log Friction'}
+                        {isSubmitting ? 'Logging…' : 'Report blocker'}
                       </button>
                     </div>
                   </div>

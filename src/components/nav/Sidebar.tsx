@@ -5,40 +5,40 @@ import clsx from 'clsx'
 
 const navigation = [
   {
-    name: 'My Flow Map',
-    href: '/my-flow',
+    name: 'My Work',
+    href: '/my-work',
     icon: '🪷',
-    description: 'Personal rhythm & insights',
+    description: 'Your patterns and reflections',
   },
   {
-    name: 'Alignment Canvas',
-    href: '/alignment',
+    name: 'Plan & Align',
+    href: '/plan',
     icon: '💬',
-    description: 'Intent meets method',
+    description: 'Agree on a method, together',
   },
   {
-    name: 'AI Team',
-    href: '/ai-team',
+    name: 'AI Assistants',
+    href: '/ai',
     icon: '🤖',
-    description: 'AI managers & workers',
+    description: 'AI planning partner and workers',
   },
   {
-    name: 'Team Pulse',
-    href: '/team-pulse',
+    name: 'Team Overview',
+    href: '/team',
     icon: '🌡️',
-    description: 'Team climate overview',
+    description: 'Team trends and suggestions',
   },
   {
-    name: 'Culture Moments',
-    href: '/culture',
+    name: 'Kudos & Wins',
+    href: '/kudos',
     icon: '🎉',
-    description: 'Celebrations & wins',
+    description: 'Wins and appreciation',
   },
   {
     name: 'Settings & Privacy',
     href: '/settings',
     icon: '⚙️',
-    description: 'Privacy controls',
+    description: 'Controls and integrations',
   },
 ]
 

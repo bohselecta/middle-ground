@@ -21,15 +21,14 @@ export default function TablatureHome() {
                   Coordinate the work. <span className="text-slate-700">Stay aligned.</span>
                 </h1>
                 <p className="mt-4 max-w-xl text-lg text-slate-600">
-                  Tablature helps teams align <em>intent</em> and <em>execution</em> without surveillance.
-                  Workers express needs clearly. Managers understand patterns safely.
+                  Tablature lines up intent and execution. Workers share needs safely. Managers see patterns—never personal diaries.
                 </p>
 
             {/* Trust signals as chips */}
             <div className="mt-6 flex flex-wrap gap-2">
               <NoteChip label="Privacy‑first" tone="mint" />
               <NoteChip label="No leaderboards" tone="neutral" />
-              <NoteChip label="Clear insights" tone="amber" />
+              <NoteChip label="Clear, useful insights" tone="amber" />
               <NoteChip label="Slack + Jira ready" tone="neutral" />
             </div>
 
@@ -47,7 +46,7 @@ export default function TablatureHome() {
               >
                 Start your team
               </Link>
-              <div className="text-sm text-slate-600">No credit card required. 2-minute setup.</div>
+              <div className="text-sm text-slate-600">No credit card. Setup in minutes.</div>
             </div>
           </div>
 
@@ -63,48 +62,48 @@ export default function TablatureHome() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
             <div className="grid gap-6 sm:grid-cols-3">
               <div className="rounded-2xl bg-white/70 p-6 shadow-soft">
-                <div className="text-sm font-medium text-slate-700">1 · My Flow Map</div>
-                <p className="mt-2 text-slate-600">Workers log friction with one tap and see personal patterns without judgment.</p>
+                <div className="text-sm font-medium text-slate-700">1 · My Work</div>
+                <p className="mt-2 text-slate-600">Log friction with one tap. See your own patterns—no judgment.</p>
               </div>
               <div className="rounded-2xl bg-white/70 p-6 shadow-soft">
-                <div className="text-sm font-medium text-slate-700">2 · Team Pulse</div>
-                <p className="mt-2 text-slate-600">Managers see anonymized patterns — understanding gaps and wins.</p>
+                <div className="text-sm font-medium text-slate-700">2 · Team Overview</div>
+                <p className="mt-2 text-slate-600">Leaders get anonymized trends and suggested actions.</p>
               </div>
               <div className="rounded-2xl bg-white/70 p-6 shadow-soft">
-                <div className="text-sm font-medium text-slate-700">3 · Alignment Canvas</div>
-                <p className="mt-2 text-slate-600">Intent meets execution. Propose small experiments and track results clearly.</p>
+                <div className="text-sm font-medium text-slate-700">3 · Plan & Align</div>
+                <p className="mt-2 text-slate-600">Agree on a simple plan. Try small trials. Review results.</p>
               </div>
             </div>
 
         {/* Secondary CTA */}
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white/70 p-6 shadow-soft">
           <div>
-            <div className="text-lg font-medium text-slate-900">Try Tablature locally</div>
-            <div className="text-sm text-slate-600">MVP runs without external services. Add Neon + Slack when you&apos;re ready.</div>
+            <div className="text-lg font-medium text-slate-900">Run the MVP locally</div>
+            <div className="text-sm text-slate-600">Works without integrations. Add Neon + Slack when ready.</div>
           </div>
           <div className="flex gap-3">
-            <Link href="/my-flow" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
-            <Link href="/team-pulse" className="rounded-2xl border-2 border-slate-300 bg-transparent px-4 py-2 text-slate-900 hover:bg-white/70">See Pulse</Link>
+            <Link href="/my-work" className="rounded-2xl bg-ink px-4 py-2 text-white shadow-soft hover:shadow-md">Open Demo</Link>
+            <Link href="/team" className="rounded-2xl border-2 border-slate-300 bg-transparent px-4 py-2 text-slate-900 hover:bg-white/70">See Pulse</Link>
           </div>
         </div>
       </section>
 
       {/* Connect tools you use */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <h2 className="text-2xl font-semibold text-slate-900">Connect tools you use</h2>
-        <p className="mt-1 text-slate-600">Optional, privacy‑first. Tablature runs without integrations; Slack brings friction logs and alerts to your workspace.</p>
+        <h2 className="text-2xl font-semibold text-slate-900">Bring the tools you use</h2>
+        <p className="mt-1 text-slate-600">Optional and privacy-first. Slack posts frictions and updates into your channel.</p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <IntegrationCard
             title="Slack"
-            desc="Post friction logs and experiment updates into a channel you choose."
+            desc="One-tap frictions and experiment updates in Slack."
             cta="Connect Slack"
             icon={<SlackIcon className="h-5 w-5" />}
             onClick={() => { window.location.href = '/integrations/slack' }}
           />
           <IntegrationCard
             title="Jira"
-            desc="Sync experiments to issues automatically."
+            desc="Turn experiments into issues automatically."
             cta="Coming soon"
             disabled
           />
@@ -115,7 +114,7 @@ export default function TablatureHome() {
       <footer className="border-t border-white/60 bg-white/60">
         <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-600">
           <div className="mb-4 text-center">
-            <p className="text-slate-600">All individual reflections remain private unless explicitly shared.</p>
+            <p className="text-slate-600">Reflections are private unless you choose to share.</p>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="font-medium text-slate-800">Tablature</div>

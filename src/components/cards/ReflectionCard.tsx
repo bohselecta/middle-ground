@@ -64,7 +64,7 @@ export default function ReflectionCard() {
     <div className="relative rounded-2xl bg-white/70 p-6 shadow-soft">
       <div className="mb-4">
         <h3 className="text-lg font-medium text-slate-900">How did today feel?</h3>
-        <p className="text-sm text-slate-600">Share your mood and any thoughts</p>
+        <p className="text-sm text-slate-600">Log a mood and any notes.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -103,7 +103,7 @@ export default function ReflectionCard() {
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="What felt good today? Any challenges?"
+            placeholder="What went well? What got in the way?"
             className="w-full px-4 py-3 rounded-xl border border-white/60 bg-white/70 text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-mint/50 focus:border-mint resize-none"
             rows={3}
           />
@@ -115,7 +115,7 @@ export default function ReflectionCard() {
           disabled={isSubmitting}
           className="w-full rounded-xl bg-ink px-4 py-3 text-white font-medium shadow-soft hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition"
         >
-          {isSubmitting ? 'Saving...' : 'Save Reflection'}
+          {isSubmitting ? 'Saving…' : 'Save reflection'}
         </button>
       </form>
 

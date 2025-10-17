@@ -11,7 +11,7 @@ export default function OnboardingPage(){
         Welcome to Tablature
       </h1>
       <p className="mt-3 text-lg text-slate-600">
-        We'll set up a space for you. This takes a minute or less.
+        We'll create a space for you in under a minute.
       </p>
 
       <div className="mt-8 rounded-2xl bg-white/70 p-6 shadow-soft">
@@ -20,22 +20,22 @@ export default function OnboardingPage(){
           <li className="flex items-start gap-3">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mint text-sm font-medium">1</span>
             <div>
-              <div className="font-medium">Create your personal team</div>
-              <div className="text-sm text-slate-600">You can rename it and invite teammates later</div>
+              <div className="font-medium">Create your team</div>
+              <div className="text-sm text-slate-600">Rename and invite later.</div>
             </div>
           </li>
           <li className="flex items-start gap-3">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mint text-sm font-medium">2</span>
             <div>
               <div className="font-medium">Add starter data</div>
-              <div className="text-sm text-slate-600">A few example reflections and frictions to get you started</div>
+              <div className="text-sm text-slate-600">A few examples so it's not empty.</div>
             </div>
           </li>
           <li className="flex items-start gap-3">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber text-sm font-medium">3</span>
             <div>
               <div className="font-medium">Connect integrations (optional)</div>
-              <div className="text-sm text-slate-600">Link Slack to post updates to your channel</div>
+              <div className="text-sm text-slate-600">Post updates to Slack.</div>
             </div>
           </li>
         </ol>
