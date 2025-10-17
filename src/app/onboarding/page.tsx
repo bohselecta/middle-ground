@@ -56,7 +56,7 @@ export default function OnboardingPage(){
       </form>
 
       <div className="mt-4 text-center text-sm text-slate-600">
-        Prefer to start clean? <Link href="/my-flow" className="text-ink underline">Skip seeding</Link>
+        Prefer to start clean? <Link href="/my-work" className="text-ink underline">Skip seeding</Link>
       </div>
     </main>
   )

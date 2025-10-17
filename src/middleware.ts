@@ -13,10 +13,11 @@ export function middleware(req: NextRequest) {
                    req.cookies.get("__Secure-next-auth.session-token")
   const pathname = req.nextUrl.pathname
   
-  const needsAuth = pathname.startsWith("/my-flow") || 
-                    pathname.startsWith("/team-pulse") ||
-                    pathname.startsWith("/alignment") ||
-                    pathname.startsWith("/culture") ||
+  const needsAuth = pathname.startsWith("/my-work") || 
+                    pathname.startsWith("/team") ||
+                    pathname.startsWith("/plan") ||
+                    pathname.startsWith("/kudos") ||
+                    pathname.startsWith("/ai") ||
                     pathname.startsWith("/settings")
   
   if (needsAuth && !isAuthed) {
@@ -32,10 +33,11 @@ export function middleware(req: NextRequest) {
 export const config = {
   matcher: [
     "/demo/:path*",
-    "/my-flow/:path*",
-    "/team-pulse/:path*",
-    "/alignment/:path*",
-    "/culture/:path*",
+    "/my-work/:path*",
+    "/team/:path*",
+    "/plan/:path*",
+    "/kudos/:path*",
+    "/ai/:path*",
     "/settings/:path*",
   ],
 }

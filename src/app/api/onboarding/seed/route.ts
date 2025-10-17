@@ -60,7 +60,7 @@ export async function POST(){
 
     // Redirect to dashboard
     return NextResponse.redirect(
-      new URL('/my-flow', process.env.NEXTAUTH_URL || 'http://localhost:3000')
+      new URL('/my-work', process.env.NEXTAUTH_URL || 'http://localhost:3000')
     )
   } catch (error) {
     console.error('Onboarding error:', error)

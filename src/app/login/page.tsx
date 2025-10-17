@@ -30,7 +30,7 @@ export default function LoginPage() {
             const email = new FormData(e.currentTarget).get("email") as string
             const result = await signIn("email", { 
               email, 
-              callbackUrl: "/my-flow",
+              callbackUrl: "/my-work",
               redirect: false 
             })
             
@@ -81,7 +81,7 @@ export default function LoginPage() {
       <div className="mt-6 rounded-2xl bg-amber/20 p-4">
         <p className="text-sm text-slate-700">
           <strong>Development Note:</strong> Email magic links require EMAIL_SERVER configuration. 
-          For now, you can bypass authentication by going directly to <a href="/my-flow" className="text-ink underline">/my-flow</a>.
+          For now, you can bypass authentication by going directly to <a href="/my-work" className="text-ink underline">/my-work</a>.
         </p>
       </div>
 
@@ -89,13 +89,13 @@ export default function LoginPage() {
       {/* 
       <div className="mt-6 space-y-2">
         <button 
-          onClick={() => signIn("github", { callbackUrl: "/my-flow" })} 
+          onClick={() => signIn("github", { callbackUrl: "/my-work" })} 
           className="w-full rounded-xl bg-white px-4 py-2 shadow-soft hover:shadow-md"
         >
           Sign in with GitHub
         </button>
         <button 
-          onClick={() => signIn("google", { callbackUrl: "/my-flow" })} 
+          onClick={() => signIn("google", { callbackUrl: "/my-work" })} 
           className="w-full rounded-xl bg-white px-4 py-2 shadow-soft hover:shadow-md"
         >
           Sign in with Google
