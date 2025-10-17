@@ -46,6 +46,7 @@ model Team {
   name      String
   createdAt DateTime     @default(now())
   members   TeamMember[]
+  projects  Project[]
 }
 
 model TeamMember {
@@ -83,6 +84,12 @@ model User {
 
   // Team relations
   teamMemberships TeamMember[]
+
+  // Project relations
+  projects    Project[]
+
+  // Agent relations
+  agents      Agent[]
 
   // Existing relations
   reflections Reflection[]
@@ -131,4 +138,99 @@ model OverrideLog {
   date      DateTime @default(now())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  teamId    String?
+  ownerId   String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  team      Team?    @relation(fields: [teamId], references: [id], onDelete: SetNull)
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  agents    Agent[]
+  tasks     Task[]
+  messages  AgentMessage[]
+}
+
+model Agent {
+  id        String      @id @default(cuid())
+  projectId String
+  userId    String?
+  type      AgentType   // human | ai_manager | ai_worker
+  role      String      // "manager" | "frontend" | "backend" | "docs"
+  skills    String[]
+  tools     String[]    // ["cursor","github","slack"]
+  llm       String?
+  status    AgentStatus @default(idle)
+  lastSeen  DateTime    @default(now())
+  
+  project   Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user      User?       @relation(fields: [userId], references: [id])
+  messages  AgentMessage[]
+  ownedTasks Task[]
+}
+
+enum AgentType { 
+  human 
+  ai_manager 
+  ai_worker 
+}
+
+enum AgentStatus { 
+  idle 
+  thinking 
+  waiting_approval 
+  running 
+  blocked 
+  done 
+}
+
+model Task {
+  id           String     @id @default(cuid())
+  projectId    String
+  title        String
+  description  String?
+  status       TaskStatus @default(todo)
+  ownerAgentId String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  
+  project      Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  ownerAgent   Agent?     @relation(fields: [ownerAgentId], references: [id])
+  
+  @@index([projectId, status])
+}
+
+enum TaskStatus { 
+  todo 
+  doing 
+  review 
+  done 
+  blocked 
+}
+
+model AgentMessage {
+  id        String      @id @default(cuid())
+  projectId String
+  agentId   String
+  kind      MessageKind // plan | critique | action | result | report
+  text      String
+  data      Json?
+  runId     String?
+  model     String?
+  createdAt DateTime    @default(now())
+  
+  project   Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  agent     Agent       @relation(fields: [agentId], references: [id], onDelete: Cascade)
+}
+
+enum MessageKind { 
+  plan 
+  critique 
+  action 
+  result 
+  report 
 }

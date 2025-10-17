@@ -4,6 +4,12 @@ export type Mood = 'low' | 'neutral' | 'high'
 export type FrictionTag = 'meetings' | 'unclear' | 'context' | 'tools' | 'fatigue'
 export type ExperimentStatus = 'proposed' | 'running' | 'done'
 
+// AI Agent types
+export type AgentType = 'human' | 'ai_manager' | 'ai_worker'
+export type AgentStatus = 'idle' | 'thinking' | 'waiting_approval' | 'running' | 'blocked' | 'done'
+export type TaskStatus = 'todo' | 'doing' | 'review' | 'done' | 'blocked'
+export type MessageKind = 'plan' | 'critique' | 'action' | 'result' | 'report'
+
 export interface User {
   id: string
   name: string
@@ -11,6 +17,75 @@ export interface User {
   teamId?: string
   createdAt: string
   updatedAt: string
+}
+
+export interface Project {
+  id: string
+  teamId?: string
+  ownerId: string
+  name: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Agent {
+  id: string
+  projectId: string
+  userId?: string
+  type: AgentType
+  role: string
+  skills: string[]
+  tools: string[]
+  llm?: string
+  status: AgentStatus
+  lastSeen: string
+}
+
+export interface Task {
+  id: string
+  projectId: string
+  title: string
+  description?: string
+  status: TaskStatus
+  ownerAgentId?: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface AgentMessage {
+  id: string
+  projectId: string
+  agentId: string
+  kind: MessageKind
+  text: string
+  data?: any
+  runId?: string
+  model?: string
+  createdAt: string
+}
+
+// AI response schemas
+export interface ManagerPlan {
+  summary: string
+  tasks: Array<{
+    title: string
+    why: string
+    owner: 'ai' | 'human'
+    skills: string[]
+    estimateH: number
+  }>
+  risks: string[]
+  checkins: string[]
+}
+
+export interface WorkerResult {
+  summary: string
+  artifacts: Array<{
+    type: 'code' | 'doc' | 'script'
+    path: string
+    content: string
+  }>
+  next: string[]
 }
 
 export interface Reflection {

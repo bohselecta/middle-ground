@@ -17,6 +17,12 @@ const navigation = [
     description: 'Intent meets method',
   },
   {
+    name: 'AI Team',
+    href: '/ai-team',
+    icon: '🤖',
+    description: 'AI managers & workers',
+  },
+  {
     name: 'Team Pulse',
     href: '/team-pulse',
     icon: '🌡️',
