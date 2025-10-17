@@ -333,9 +333,9 @@ export default function AITeamPage() {
                       <div className="flex items-center space-x-3">
                         <NoteChip 
                           label={task.ownerAgentId ? 'AI' : 'Human'} 
-                          tone={task.ownerAgentId ? 'mint' : 'slate'} 
+                          tone={task.ownerAgentId ? 'mint' : 'neutral'} 
                         />
-                        <NoteChip label={task.status} tone="slate" />
+                        <NoteChip label={task.status} tone="neutral" />
                         {!task.ownerAgentId && (
                           <button
                             onClick={() => assignToWorker(task)}
