@@ -42,7 +42,7 @@ export async function GET(req: Request) {
       model: run.model,
       status: 'done', // All stored runs are completed
       duration: 0, // Could calculate from timestamps if needed
-      tokenEstimate: run.data?.tokenEstimate || 0,
+      tokenEstimate: (run.data as any)?.tokenEstimate || 0,
       createdAt: run.createdAt,
       agentType: run.agent.type,
       agentRole: run.agent.role
